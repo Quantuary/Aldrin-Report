@@ -1,0 +1,26 @@
+
+# Build the new docker image from Dockerfile for marcus leong report
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['build', '-t', 'australia-southeast1-docker.pkg.dev/$pricing-nonprod-687b/gcp-pricing-monitoring/mlimage:$SHORT_SHA', '.']
+  id: 'build_ml_report'
+  #dir: 'fraud_analytics/janusgraph/janusgraph_docker'
+
+# Docker push to Google Artifact Registry
+- name: 'gcr.io/cloud-builders/docker' 
+  id: 'push_mlimage'
+  waitFor:
+    - build_ml_report
+  args: ['push', 'australia-southeast1-docker.pkg.dev/$pricing-nonprod-687b/gcp-pricing-monitoring/mlimage:$SHORT_SHA']
+# [END cloudbuild_python_push_yaml]
+
+
+# [START cloudbuild_python_deploy_yaml]
+# Deploy to Cloud Run
+- name: gcr.io/cloud-builders/gcloud
+  args: ['gcloud', 'run', 'deploy', 'mlreport-$SHORT_SHA', 
+           '--image=australia-southeast1-docker.pkg.dev/$pricing-nonprod-687b/gcp-pricing-monitoring/mlimage:$SHORT_SHA', 
+           '--region', 'australia-southeast1', '--platform', 'managed', 
+           '--allow-unauthenticated']
+# [END cloudbuild_python_deploy_yaml]
+  
+  

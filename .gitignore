@@ -1,0 +1,11 @@
+*.pyc
+.DS_Store
+env/
+
+
+*__pycache__/
+data/*
+*distributions.py
+*feesMins.py
+*newsReviews.py
+*portfolioManagement.py
