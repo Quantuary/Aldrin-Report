@@ -55,7 +55,7 @@ class retrieve():
         #import_cls = import_data('_partner_ranking.sql')
         #df= import_cls.df
         #df.to_csv('_ranking.csv')
-        df = pd.read_csv("_ranking.csv", index_col=[0])
+        df = pd.read_csv("dummy_data/_ranking.csv", index_col=[0])
         df.loc[:,"DATE"] = pd.to_datetime(df['DATE'])
        
         # filter for AFINITY BRAND
@@ -78,7 +78,7 @@ class retrieve():
         #import_cls = import_data('_sales_volume.sql')
         #df= import_cls.df
         #df.to_csv("_sales_volume.csv")
-        df = pd.read_csv("_sales_volume.csv", index_col=[0])
+        df = pd.read_csv("dummy_data/_sales_volume.csv", index_col=[0])
         df.loc[:,"DATE"] = pd.to_datetime(df['DATE'])
         df["VEHICLE_PREMIUM"] =df["VEHICLE_PREMIUM"].astype(float) 
 
@@ -107,7 +107,7 @@ class retrieve():
         #import_cls = import_data('_percentageDiscount.sql')
         #df= import_cls.df
         #df.to_csv("_percentageDiscount.csv")
-        df = pd.read_csv("_percentageDiscount.csv", index_col=[0])
+        df = pd.read_csv("dummy_data/_percentageDiscount.csv", index_col=[0])
         df.loc[:,"DATE"] = pd.to_datetime(df['DATE'])
         
         df.set_index('DATE', inplace=True)
@@ -123,7 +123,7 @@ class retrieve():
         #import_cls = import_data('_AVE.sql')
         #df= import_cls.df
         #df.to_csv("_ave.csv")
-        df = pd.read_csv("_ave.csv", index_col=[0])
+        df = pd.read_csv("dummy_data/_ave.csv", index_col=[0])
         df.loc[:,"DATE"] = pd.to_datetime(df['DATE'])
         df.set_index('DATE', inplace=True)
         df.sort_index(inplace=True)
@@ -137,7 +137,7 @@ class retrieve():
         #import_cls = import_data('_rankCompareMatrix.sql')
         #df= import_cls.df
         #df.to_csv("_rankCompareMatrix.csv")
-        df = pd.read_csv("_rankCompareMatrix.csv", index_col=[0])
+        df = pd.read_csv("dummy_data/_rankCompareMatrix.csv", index_col=[0])
         df.loc[:,"DATE"] = pd.to_datetime(df['DATE'])
         df.set_index('DATE', inplace=True)
         df.sort_index(inplace=True)
@@ -157,7 +157,7 @@ class retrieve():
         #import_cls = import_data('_conversion.sql')
         #df= import_cls.df
         #df.to_csv("_conversion.csv")
-        df = pd.read_csv("_conversion.csv", index_col=[0])
+        df = pd.read_csv("dummy_data/_conversion.csv", index_col=[0])
         df.loc[:,"DATE"] = pd.to_datetime(df['DATE'])
         
        
