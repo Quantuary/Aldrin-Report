@@ -6,11 +6,10 @@
 ## Overview
 This is a repository for the project Aldrin reporting tool. General features are as below:
 
-![png](screenshots/page1.png)
-![png](screenshots/page2.png)
-![png](screenshots/page3.png)
-![png](screenshots/FPR.png)
-![png](screenshots/Discount.png)
+
+![Alt Text](screenshots/demo1.gif)
+![Alt Text](screenshots/demo2.gif)
+
 
 
 
